@@ -1,0 +1,12 @@
+item_id,owner_id,category,description,date_created,date_modified,pick_up_address,reserved_status
+0,123,clothing,lorem ipsum,10/8/18,10/8/18,lorem ipsum,false
+1,123,clothing,lorem ipsum,10/8/18,10/8/18,lorem ipsum,false
+2,234,clothing,lorem ipsum,10/8/18,10/8/18,lorem ipsum,false
+3,123,toys,lorem ipsum,10/9/18,10/9/18,lorem ipsum,false
+4,234,clothing,lorem ipsum,10/10/18,10/10/18,lorem ipsum,false
+5,345,electronics,lorem ipsum,10/13/18,10/13/18,lorem ipsum,false
+6,234,toys,lorem ipsum,10/14/18,10/14/18,lorem ipsum,false
+7,123,clothing,lorem ipsum,10/15/18,10/15/18,lorem ipsum,false
+8,345,electronics,lorem ipsum,10/16/18,10/16/18,lorem ipsum,false
+9,234,toys,lorem ipsum,10/17/18,10/17/18,lorem ipsum,false
+10,234,clothing,lorem ipsum,10/18/18,10/18/18,lorem ipsum,false
