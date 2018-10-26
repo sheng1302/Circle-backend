@@ -1,25 +1,28 @@
 const express = require("express");
-const app = express();
 const bodyParser = require("body-parser");
-const port = process.env.PORT || 5000;
+const controller = require('./controllers');
+const models = require('./models');
+
+
+const PORT = process.env.PORT || 5000;
+const app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(express.static('./public'));
 
 app.get('/', (req,res) => {
     res.send("hello");
-})
-
-app.get('/items', (req,res) => {
-    res.send("hello");
-})
-
-app.get('/items/:item_id', (req,res) => {
-    res.send(req.params.item_id);
-})
-
-
-app.listen(port, () => {
-    console.log(`server started on port ${port}`);
 });
 
+app.use(controller);
+
+
+
+models.sequelize.sync({ force: false })
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`Server is up and running on port: ${PORT}`)
+        });
+    });
 

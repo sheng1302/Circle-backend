@@ -19,6 +19,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "pg": "^7.6.0",
+    "sequelize": "^4.41.0"
   }
 }
