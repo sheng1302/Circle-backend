@@ -2,7 +2,7 @@ const express = require('express');
 const models = require('../models');
 const router = express.Router();
 
-const UsersController = {
+const USERS_CONTROLLER = {
     registerRoute(){
 
         router.get('/',this.index);
@@ -112,4 +112,4 @@ const UsersController = {
 
 };
 
-module.exports = UsersController.registerRoute();
+module.exports = USERS_CONTROLLER.registerRoute();
