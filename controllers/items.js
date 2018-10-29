@@ -15,8 +15,8 @@ const ITEMS_CONTROLLER = {
         router.get('/', this.index);
         router.get('/:id', this.show);
         router.post('/', this.create);
-        // router.put(':/id', this.update);
-        // router.delete('/:id', this.destroy);
+        router.put(':/id', this.update);
+        router.delete('/:id', this.destroy);
 
         return router;
     },
@@ -61,7 +61,39 @@ const ITEMS_CONTROLLER = {
         
     },
 
+    update(req,res){
+        models.Items.update({
+            owner_id: req.body.owner_id,
+            category: req.body.category,
+            description: req.body.description,
+            pick_up_address: req.body.pick_up_address,
+            reserved_status : req.body.reserved_status   
+        }, {
+            where: {
+                item_id: req.params.id
+            },
+        })
+        .then((item)=>{
+            res.status(200).json( { message : "Your information has been updated." });           
+        })
+        .catch(err=>{
+            res.status(500).json( {message : "Unknown error occurred! Please try again later." });
+        })
+    },
 
+    destroy(req,res){
+        models.Items.destroy({
+            where:{
+                item_id: req.params.id
+            }
+        })
+            .then((user)=>{
+                res.status(200).json( { message : "Information has been destroyed." });
+            })
+            .catch((err)=>{
+                res.status(500).json( {message : "Unknown error occurred! Please try again later." });
+            })
+    }
 };
 
 module.exports = ITEMS_CONTROLLER.registerRoute();
