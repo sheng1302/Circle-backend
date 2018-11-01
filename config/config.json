@@ -18,6 +18,7 @@
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "postgresql"
+    "dialect": "postgresql",
+    "use_env_variable": "postgres://zecsqxbbkoysrm:db3b41ea82b0a543d75e7616272ca768ce4cb5a3dda0baf300d169a91cc89ee9@ec2-54-83-49-109.compute-1.amazonaws.com:5432/dec1ufu8otjmai"
   }
 }
