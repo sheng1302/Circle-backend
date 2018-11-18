@@ -2,6 +2,7 @@ const express = require('express');
 const models = require('../models');
 const router = express.Router();
 
+const Users = models.Users;
 const USERS_CONTROLLER = {
     registerRoute(){
 
@@ -15,7 +16,7 @@ const USERS_CONTROLLER = {
     },
 
     index(req, res) {
-        models.Users.findAll()
+        Users.findAll()
             .then( (users) => {
                 res.json(users);
             });
@@ -23,7 +24,7 @@ const USERS_CONTROLLER = {
     },
 
     show(req, res){
-        models.Users.findById(req.params.id)
+        Users.findById(req.params.id)
             .then( (user) => {
                 if(user === null){
                     res.status(404).json( {message : "User not found."});
@@ -40,16 +41,16 @@ const USERS_CONTROLLER = {
 
     create(req, res){
 
-        console.log(req.body.email, req.body.username, req.body.password, req.body.address);
-        if(req.body.email === undefined || req.body.username === undefined || req.body.password === undefined || req.body.address === undefined){
+        if(req.body.email === undefined || req.body.username === undefined || req.body.password === undefined || req.body.address === undefined || req.body.user_type === undefined){
 
             res.status(400).json( {message : 'Inputs are invalid! Please make sure all information are completed correctly. ' } );
         } else{
-            models.Users.create({
+            Users.create({
                 email : req.body.email,
                 username : req.body.username,
-                password : req.body.password,
+                password_hash : req.body.password,
                 address : req.body.address,
+                user_type : req.body.user_type,
             })
                 .then((user) => {
                     res.status(201).json( {message : "Your account has successfully created." });
@@ -68,33 +69,33 @@ const USERS_CONTROLLER = {
         if(req.params.id === undefined){
             res.status(400).json( {message : 'Inputs are invalid! Please make sure all information are completed correctly. ' });
         } else{
-            models.Users.update({
+            Users.update({
                 email : req.body.email,
                 username : req.body.username,
-                password : req.body.password,
-                address : req.body.address
+                password_hash : req.body.password,
+                address : req.body.address,
+                user_type : req.body.user_type,
 
-                }, {
+            }, {
                 where : {
-                            id : req.params.id
-                        },
-                })
-                .then((user) => {
+                    id : req.params.id
+                    },
+            }).then((user) => {
                     res.status(200).json( { message : "Your information has been updated." });
 
-                })
-                .catch((err) => {
+            }).catch((err) => {
                     res.status(500).json( {message : "Unknown error occurred! Please try again later." });
                     console.log(err);
                 })
         }
     },
 
+
     destroy(req, res){
         if(req.params.id === undefined){
             res.status(400).json( {message : 'Inputs are invalid! Please make sure all information are completed correctly. ' });
         } else{
-            models.Users.destroy({
+            Users.destroy({
                 where : {
                     id: req.params.id
                 }
