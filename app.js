@@ -35,8 +35,6 @@ app.get('/', (req,res) => {
 });
 
 
-
-
 models.sequelize.sync({ force: false })
     .then(() => {
         app.listen(PORT, () => {

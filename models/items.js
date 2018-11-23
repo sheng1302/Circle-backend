@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: DataTypes.UUIDV1,
             primaryKey: true
         },
-        owner_id: DataTypes.STRING,
+        owner_id: DataTypes.UUID,
         category: DataTypes.STRING,
         description: DataTypes.STRING,
         pick_up_address: DataTypes.STRING,
@@ -13,7 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Items.associations = (models) =>{
-
+        Items.hasOne(models.Orders, {
+            foreignKey: 'item_id',
+            as: 'item_id'
+        });
     };
 
 
