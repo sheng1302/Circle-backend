@@ -3,10 +3,28 @@ const app = express();
 const models = require('../models');
 const bodyParser = require('body-parser');
 const router = express.Router();
+const multer = require("multer");
+const cloudinary = require("cloudinary");
+const cloudinaryStorage = require("multer-storage-cloudinary");
 
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+cloudinary.config({
+    cloud_name: 'dtcnv504w',
+    api_key: 236429391513196,
+    api_secret: '-6OODlF1he-3mLV8O9aKbEp11O4',
+    });
+
+const storage = cloudinaryStorage({
+    cloudinary: cloudinary,
+    folder: "circle",
+    allowedFormats: ["jpg", "png"],
+    transformation: [{ width: 500, height: 500, crop: "limit" }]
+    });
+    
+const parser = multer({ storage: storage });
 
 app.use(bodyParser.json());
 
@@ -14,7 +32,7 @@ const ITEMS_CONTROLLER = {
     registerRoute(){
         router.get('/', this.index);
         router.get('/:id', this.show);
-        router.post('/', this.create);
+        router.post('/', parser.single("image"), this.create);
         router.put(':/id', this.update);
         router.delete('/:id', this.destroy);
 
@@ -48,7 +66,9 @@ const ITEMS_CONTROLLER = {
                 category: req.body.category,
                 description: req.body.description,
                 pick_up_address: req.body.pick_up_address,
-                reserved_status : req.body.reserved_status   
+                reserved_status : req.body.reserved_status,
+                item_pic_url : req.file.url,
+                item_pic_id: req.file.public_id
             })
                 .then((item)=>{
                     res.status(201).json({

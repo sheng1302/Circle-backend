@@ -5,6 +5,8 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: DataTypes.UUIDV1,
             primaryKey: true
         },
+        item_pic_url: DataTypes.STRING,
+        item_pic_id: DataTypes.STRING,
         owner_id: DataTypes.UUID,
         category: DataTypes.STRING,
         description: DataTypes.STRING,
