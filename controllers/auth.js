@@ -2,7 +2,6 @@ const express = require('express');
 const models = require('../models');
 const passport = require('../middlewares/auth');
 const router = express.Router();
-
 const User = models.Users;
 
 const AUTH_CONTROLLER = {
@@ -45,17 +44,29 @@ const AUTH_CONTROLLER = {
 
             res.status(400).json( {message : 'Inputs are invalid! Please make sure all information are completed correctly. ' } );
         } else {
-            User.create({
-                email: req.body.email,
-                username: req.body.username,
-                password_hash: req.body.password,
-                address: req.body.address,
-                user_type: req.body.user_type,
-            }).then((user) => {
-                res.json({msg: "user created"});
-            }).catch(() => {
-                res.status(400).json({msg: "error creating user"});
-            });
+            let email = req.body.email;
+            User.findOne( { where : {email} })
+                .then( (user) => {
+                    if(user){
+
+                        res.json({message : "User already exist! Please input a different email."});
+                    } else{
+                        User.create({
+                            email: req.body.email,
+                            username: req.body.username,
+                            password_hash: req.body.password,
+                            address: req.body.address,
+                            user_type: req.body.user_type,
+                        }).then((user) => {
+                            res.json({message: `Account for ${req.body.username} has been created. `});
+                        }).catch(() => {
+                            res.status(400).json({message: "error creating user"});
+                        });
+                    }
+                })
+                .catch( (err) => {
+                    console.log(err);
+                });
         }
     },
 
