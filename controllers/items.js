@@ -34,6 +34,7 @@ const ITEMS_CONTROLLER = {
         router.get('/:id', this.show);
         router.post('/', parser.single("image"), this.create);
         router.put(':/id', this.update);
+        router.put('/reserve/:id', this.reserve);
         router.delete('/:id', this.destroy);
 
         return router;
@@ -100,6 +101,42 @@ const ITEMS_CONTROLLER = {
         .catch(err=>{
             res.status(500).json( {message : "Unknown error occurred! Please try again later." });
         })
+    },
+
+    reserve(req,res){
+        models.Items.update({
+            reserved_status: true
+        }, {
+            where: {
+                item_id: req.params.id
+            }
+        })
+        .catch(err => {
+                res.status(500).json(
+                    {
+                        message: "error occured"
+                    }
+                )
+        })
+
+
+        models.Orders.create({
+            item_id: req.body.item_id,
+            customer_id: req.body.customer_id,
+            pick_up_date: req.body.pick_up_date,
+            description: req.body.description,
+            order_status : req.body.order_status
+        })
+            .then((order)=>{
+                console.log("hi" + order.customer_id);
+                res.status(201).json({
+                    message: "Your order is added"
+                });
+            })
+            .catch((err) => {
+                res.status(500).json({message: err});
+            })
+
     },
 
     destroy(req,res){
