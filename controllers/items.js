@@ -61,6 +61,7 @@ const ITEMS_CONTROLLER = {
     },
 
     create(req, res){
+
             models.Items.create({
                 owner_id: req.body.owner_id,
                 category: req.body.category,
