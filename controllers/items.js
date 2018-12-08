@@ -41,7 +41,11 @@ const ITEMS_CONTROLLER = {
     },
 
     index(req,res){
-        models.Items.findAll()
+        models.Items.findAll({
+            where : {
+                reserved_status: false,
+            }
+        })
             .then((items) => {
                 res.json(items);
             }); 
@@ -74,7 +78,7 @@ const ITEMS_CONTROLLER = {
             })
                 .then((item)=>{
                     res.status(201).json({
-                        message: "Your item is added"
+                        message: `Item has been added to the pick-up queue. Once your item is being reserved, you will be notified from one of the non-profit organizations to pick up your item.`
                     });
                 })
                 .catch((err) => {
