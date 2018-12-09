@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const controller = require('./controllers');
+const path = require('path');
 const models = require('./models');
 
 const flash = require('connect-flash');
@@ -30,10 +31,13 @@ app.use(passport.session());
 app.use(controller);
 
 app.use(express.static(path.join(__dirname, 'Circle/build'))); // use this during production mode only!
-
 app.get('/', (req,res) => {
-    res.send(__dirname + 'Circle/build/index.html');
+    res.sendFile(__dirname + 'Circle/build/index.html');
 });
+
+/*app.get('/', (req,res) => {
+    res.send('Hello, development mode! ');
+})*/
 
 
 models.sequelize.sync({ force: false })
