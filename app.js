@@ -29,9 +29,10 @@ app.use(passport.session());
 
 app.use(controller);
 
+app.use(express.static(path.join(__dirname, 'Circle/build'))); // use this during production mode only!
 
 app.get('/', (req,res) => {
-    res.send("hello");
+    res.send(__dirname + 'Circle/build/index.html');
 });
 
 
