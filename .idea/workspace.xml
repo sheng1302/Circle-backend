@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9e1d2af-208d-4ecb-b143-a40773bd50ed" name="Default Changelist" comment="" />
+    <list default="true" id="e9e1d2af-208d-4ecb-b143-a40773bd50ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -82,20 +84,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="8" selection-end-column="67" />
+              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="38" />
+            <state relative-caret-position="343">
+              <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -220,7 +222,6 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/Circle/package.json" />
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
@@ -245,11 +246,6 @@
             <path>
               <item name="Circle-backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="Circle-backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Circle-backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Circle-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="Circle" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -342,12 +338,12 @@
       <workItem from="1544061770349" duration="2661000" />
       <workItem from="1544141421165" duration="3358000" />
       <workItem from="1544156186156" duration="6742000" />
-      <workItem from="1544332107151" duration="555000" />
+      <workItem from="1544332107151" duration="990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57166000" />
+    <option name="totallyTimeSpent" value="57601000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,8 +356,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6573427" visible="true" weight="0.22973925" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6573427" visible="true" weight="0.22973925" />
       <window_info id="Structure" order="1" sideWeight="0.3365019" side_tool="true" weight="0.1761804" />
       <window_info id="npm" order="2" sideWeight="0.34265736" side_tool="true" weight="0.1761804" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -375,7 +372,7 @@
       <window_info anchor="bottom" id="Favorites" order="8" sideWeight="0.49881798" weight="0.3299363" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5081043" side_tool="true" weight="0.3120482" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4918957" visible="true" weight="0.31084338" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4918957" visible="true" weight="0.31084338" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -546,17 +543,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="8" selection-end-column="67" />
+        <state relative-caret-position="343">
+          <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="38" />
+        <state relative-caret-position="105">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
         </state>
       </provider>
     </entry>

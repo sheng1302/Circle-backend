@@ -30,14 +30,9 @@ app.use(passport.session());
 
 app.use(controller);
 
-app.use(express.static(path.join(__dirname, 'Circle/build'))); // use this during production mode only!
 app.get('/', (req,res) => {
-    res.sendFile(__dirname + 'Circle/build/index.html');
-});
-
-/*app.get('/', (req,res) => {
     res.send('Hello, development mode! ');
-})*/
+})
 
 
 models.sequelize.sync({ force: false })
