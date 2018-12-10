@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 const ORDERS_CONTROLLER = {
     registerRoute(){
-        router.get('/', this.index);
+        router.get('/:customer_id', this.index);
         router.get('/:id', this.show);
         router.post('/', this.create);
         router.put(':/id', this.update);
@@ -22,7 +22,11 @@ const ORDERS_CONTROLLER = {
     },
 
     index(req,res){
-        models.Orders.findAll()
+        models.Orders.findAll({
+            where: {
+                customer_id: req.params.customer_id
+            }
+        })
             .then((orders) => {
                 res.json(orders);
             }); 
