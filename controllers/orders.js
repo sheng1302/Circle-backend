@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const ORDERS_CONTROLLER = {
     registerRoute(){
         router.get('/:customer_id', this.index);
-        router.get('/:id', this.show);
+        //router.get('/:id', this.show);
         router.post('/', this.create);
         router.put(':/id', this.update);
         router.delete('/:id', this.destroy);
@@ -25,7 +25,10 @@ const ORDERS_CONTROLLER = {
         models.Orders.findAll({
             where: {
                 customer_id: req.params.customer_id
-            }
+            },
+            include: [{
+                model: models.Items,
+            }]
         })
             .then((orders) => {
                 res.json(orders);
