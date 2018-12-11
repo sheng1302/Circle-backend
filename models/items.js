@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
         reserved_status : DataTypes.BOOLEAN     
     });
 
-    Items.associations = (models) =>{
-        Items.hasOne(models.Orders, {
+    Items.associate = function(models){
+        Items.hasMany(models.Orders, {
             foreignKey: 'item_id',
-            as: 'item_id'
+            as: 'orderd_item_id',
         });
     };
 

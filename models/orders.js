@@ -12,5 +12,12 @@ module.exports = (sequelize, DataTypes) => {
         order_status : DataTypes.STRING     
     });
 
+    Orders.associate = (models)=> {
+        Orders.belongsTo(models.Items, {
+            foreignKey: 'item_id',
+        })
+    }
+
+
     return Orders;
 };
