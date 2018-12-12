@@ -13,9 +13,10 @@ app.use(bodyParser.json());
 const ORDERS_CONTROLLER = {
     registerRoute(){
         router.get('/:customer_id', this.index);
-        //router.get('/:id', this.show);
+        router.get('/:id', this.show);
         router.post('/', this.create);
-        router.put(':/id', this.update);
+        router.put('/:id', this.update);
+        router.put('/mark/:id', this.mark);
         router.delete('/:id', this.destroy);
 
         return router;
@@ -24,15 +25,48 @@ const ORDERS_CONTROLLER = {
     index(req,res){
         models.Orders.findAll({
             where: {
-                customer_id: req.params.customer_id
+                customer_id: req.params.customer_id,
+                order_status : "Requested",
             },
             include: [{
                 model: models.Items,
             }]
         })
             .then((orders) => {
-                res.json(orders);
-            }); 
+                res.status(200).json(orders);
+            })
+            .catch((err) => {
+                res.status(500).json({message : err});
+            });
+
+    },
+
+
+    mark(req,res){
+        models.Orders.update({
+            order_status: 'Completed'
+        }, {
+            where: {
+                item_id: req.params.id
+            }
+        })
+            .then(
+                () => {
+                    res.status(200).json(
+                        {
+                            message: "succeeded!"
+                        }
+                    )
+                }
+            )
+            .catch(err => {
+                res.status(500).json(
+                    {
+                        message: "error occured"
+                    }
+                )
+            });
+
     },
 
     show(req,res){

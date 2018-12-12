@@ -115,13 +115,13 @@ const ITEMS_CONTROLLER = {
                 item_id: req.params.id
             }
         })
-        .catch(err => {
+            .catch(err => {
                 res.status(500).json(
                     {
                         message: "error occured"
                     }
                 )
-        })
+            });
 
 
         models.Orders.create({
