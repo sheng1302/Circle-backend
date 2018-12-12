@@ -15,7 +15,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(express.static('./public'));
+app.use(express.static(path.join(__dirname, '/build')));
 app.use(cookieParser());
 app.use(flash());
 app.use(expressSession(({
@@ -31,8 +31,8 @@ app.use(passport.session());
 app.use(controller);
 
 app.get('/', (req,res) => {
-    res.send('Hello, development mode! ');
-})
+    res.sendFile(path.join(__dirname+'/build/index.html'));
+});
 
 
 models.sequelize.sync({ force: false })
