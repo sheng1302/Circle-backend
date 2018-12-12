@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 const ORDERS_CONTROLLER = {
     registerRoute(){
         router.get('/:customer_id', this.index);
+        router.get('/order_status/:item_id', this.mark);
         //router.get('/:id', this.show);
         router.post('/', this.create);
         router.put(':/id', this.update);
@@ -67,6 +68,28 @@ const ORDERS_CONTROLLER = {
                 })
         
     },
+
+    mark(req,res){
+            models.Orders.update({
+                order_status: 'Completed'
+            }, {
+                where: {
+                    item_id: req.params.item_id
+                }
+            }).then((order)=>{
+            res.status(201).json({
+                message: "Order Completed"
+            })
+        })
+                .catch(err => {
+                    res.status(500).json(
+                        {
+                            message: "error occured"
+                        }
+                    )
+                });
+        
+        },
 
     update(req,res){
         models.Orders.update({
