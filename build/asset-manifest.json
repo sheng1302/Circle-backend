@@ -1,13 +1,13 @@
 {
   "main.css": "/static/css/main.ffe6baed.chunk.css",
-  "main.js": "/static/js/main.72491f72.chunk.js",
-  "main.js.map": "/static/js/main.72491f72.chunk.js.map",
+  "main.js": "/static/js/main.bd2cbe01.chunk.js",
+  "main.js.map": "/static/js/main.bd2cbe01.chunk.js.map",
   "static/css/1.a2923104.chunk.css": "/static/css/1.a2923104.chunk.css",
   "static/js/1.febab215.chunk.js": "/static/js/1.febab215.chunk.js",
   "static/js/1.febab215.chunk.js.map": "/static/js/1.febab215.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/mdb.css": "/static/media/Roboto-Bold.dc81817d.woff",
+  "static/media/mdb.css": "/static/media/Roboto-Bold.e31fcf18.ttf",
   "static/media/circle_logo.png": "/static/media/circle_logo.6234a579.png",
   "static/media/rachel.jpg": "/static/media/rachel.925ac820.jpg",
   "static/media/jane.jpg": "/static/media/jane.ea6f34bc.jpg",
@@ -19,9 +19,9 @@
   "static/media/About.css": "/static/media/about.73589d37.jpg",
   "static/media/Login.css": "/static/media/signinbg.4c0b4c03.jpg",
   "static/media/Register.css": "/static/media/register.e010c9a9.jpg",
-  "static/css/1.a2923104.chunk.css.map": "/static/css/1.a2923104.chunk.css.map",
   "static/css/main.ffe6baed.chunk.css.map": "/static/css/main.ffe6baed.chunk.css.map",
+  "static/css/1.a2923104.chunk.css.map": "/static/css/1.a2923104.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.9079b0cb14bb82b73d4d692ec1657a0b.js": "/precache-manifest.9079b0cb14bb82b73d4d692ec1657a0b.js",
+  "precache-manifest.d8f54f0b3a1a9c070d60b0639a928ff3.js": "/precache-manifest.d8f54f0b3a1a9c070d60b0639a928ff3.js",
   "service-worker.js": "/service-worker.js"
 }
