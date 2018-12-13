@@ -44,6 +44,9 @@ const ITEMS_CONTROLLER = {
         models.Items.findAll({
             where : {
                 reserved_status: false,
+            },
+            include: {
+                model: models.Users,
             }
         })
             .then((items) => {
