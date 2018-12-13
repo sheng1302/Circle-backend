@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 const ORDERS_CONTROLLER = {
     registerRoute(){
         router.get('/:customer_id', this.index);
+        router.get('/:customer_id', this.index);
         router.get('/:id', this.show);
         router.post('/', this.create);
         router.put('/:id', this.update);
@@ -30,6 +31,9 @@ const ORDERS_CONTROLLER = {
             },
             include: [{
                 model: models.Items,
+                include: [{
+                    model: models.Users,
+                }]
             }]
         })
             .then((orders) => {
