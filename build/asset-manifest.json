@@ -1,13 +1,13 @@
 {
   "main.css": "/static/css/main.824ba9ab.chunk.css",
-  "main.js": "/static/js/main.4c626a15.chunk.js",
-  "main.js.map": "/static/js/main.4c626a15.chunk.js.map",
+  "main.js": "/static/js/main.6f3235ef.chunk.js",
+  "main.js.map": "/static/js/main.6f3235ef.chunk.js.map",
   "static/css/1.34ef8826.chunk.css": "/static/css/1.34ef8826.chunk.css",
   "static/js/1.0a734113.chunk.js": "/static/js/1.0a734113.chunk.js",
   "static/js/1.0a734113.chunk.js.map": "/static/js/1.0a734113.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/mdb.css": "/static/media/Roboto-Light.3b813c2a.woff",
+  "static/media/mdb.css": "/static/media/Roboto-Bold.e31fcf18.ttf",
   "static/media/circle_logo.png": "/static/media/circle_logo.6234a579.png",
   "static/media/rachel.jpg": "/static/media/rachel.925ac820.jpg",
   "static/media/jane.jpg": "/static/media/jane.ea6f34bc.jpg",
@@ -22,6 +22,6 @@
   "static/css/main.824ba9ab.chunk.css.map": "/static/css/main.824ba9ab.chunk.css.map",
   "static/css/1.34ef8826.chunk.css.map": "/static/css/1.34ef8826.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.f6ed1b0fb5347d6c49b02b23ddcac24f.js": "/precache-manifest.f6ed1b0fb5347d6c49b02b23ddcac24f.js",
+  "precache-manifest.97086c6a7562ff9e5b4d76d0c386fd07.js": "/precache-manifest.97086c6a7562ff9e5b4d76d0c386fd07.js",
   "service-worker.js": "/service-worker.js"
 }
