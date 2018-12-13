@@ -17,8 +17,12 @@ module.exports = (sequelize, DataTypes) => {
     Items.associate = function(models){
         Items.hasMany(models.Orders, {
             foreignKey: 'item_id',
-            as: 'orderd_item_id',
+            as: 'ordered_item_id',
         });
+
+        Items.belongsTo(models.Users, {
+            foreignKey: 'owner_id',
+        })
     };
 
 
